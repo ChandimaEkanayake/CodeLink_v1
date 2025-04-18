@@ -2,93 +2,103 @@
 
 CodeLink is a comprehensive code review and visualization tool designed to help developers understand code changes, their impacts, and related documentation. It provides an intuitive interface for exploring repository branches, commits, and file changes with detailed explanations and analysis.
 
-![CodeLink Screenshot](/placeholder.svg?height=400&width=800)
+![CodeLink Screenshot](public/placeholder.svg)
 
-## Features
+---
 
-- **Branch and Commit Explorer**: Navigate through repository branches and commits
-- **Code Change Visualization**: View file changes with syntax highlighting
-- **Feature Explanations**: Understand the purpose and impact of code changes
-- **Unit Test Integration**: View and run tests associated with code changes
-- **Impact Analysis**: Identify potential impacts of changes on other parts of the codebase
-- **Test Status Tracking**: Track the testing status of changes across branches
+## 🚀 Features
 
-## System Requirements
+- **Branch and Commit Explorer**: Navigate through repository branches and commits.
+- **Code Change Visualization**: View file changes with syntax highlighting.
+- **Feature Explanations**: Understand the purpose and impact of code changes.
+- **Unit Test Integration**: View and run tests associated with code changes.
+- **Impact Analysis**: Identify potential impacts of changes on other parts of the codebase.
+- **Test Status Tracking**: Track the testing status of changes across branches.
 
-- **Frontend**:
-  - Node.js 16.x or higher
-  - npm 7.x or higher
-  - Modern web browser (Chrome, Firefox, Safari, Edge)
+---
 
-- **Backend**:
-  - Python 3.9 or higher
-  - FastAPI
-  - uvicorn
+## 🖥️ System Requirements
 
-## Setup Instructions
+### Frontend
+- Node.js `16.x` or higher
+- npm `7.x` or higher
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+
+### Backend
+- Python `3.9` or higher
+- FastAPI
+- uvicorn
+
+---
+
+## ⚙️ Setup Instructions
 
 ### Backend Setup (FastAPI)
 
-1. Navigate to the server directory:
-   \`\`\`bash
-   cd server
-   \`\`\`
+```bash
+cd server
 
-2. Create and activate a virtual environment:
-   \`\`\`bash
-   # Create virtual environment
-   python -m venv venv
+# Create virtual environment
+python -m venv venv
 
-   # Activate on Windows
-   venv\Scripts\activate
+# Activate the virtual environment
+# On Windows
+venv\Scripts\activate
 
-   # Activate on macOS/Linux
-   source venv/bin/activate
-   \`\`\`
+# On macOS/Linux
+source venv/bin/activate
 
-3. Install dependencies:
-   \`\`\`bash
-   pip install -r requirements.txt
-   \`\`\`
+# Install dependencies
+pip install -r requirements.txt
 
-4. Create a `.env` file in the server directory with the following content:
-   \`\`\`
-   ENABLE_DETAILED_LOGGING=True
-   API_RESPONSE_DELAY=0.3
-   EDGE_CASES_SUBMISSION_DELAY=0.5
-   TEST_STATE_SYNC_DELAY=0.3
-   \`\`\`
+# Create .env file
+```
 
-5. Start the FastAPI server:
-   \`\`\`bash
-   python main.py
-   \`\`\`
+`.env`
+```env
+ENABLE_DETAILED_LOGGING=True
+API_RESPONSE_DELAY=0.3
+EDGE_CASES_SUBMISSION_DELAY=0.5
+TEST_STATE_SYNC_DELAY=0.3
+```
 
-   The backend will be available at http://localhost:8000. You can access the API documentation at http://localhost:8000/docs.
+```bash
+# Start the FastAPI server
+python main.py
+```
+
+📍 Access API: [http://localhost:8000](http://localhost:8000)  
+📚 Swagger Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
 
 ### Frontend Setup (Next.js)
 
-1. From the project root, install dependencies:
-   \`\`\`bash
-   npm install
-   \`\`\`
+```bash
+# From project root
+npm install
 
-2. Create a `.env.local` file in the project root with the following content:
-   \`\`\`
-   API_BASE_URL=http://localhost:8000
-   NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
-   \`\`\`
+# Create environment config
+```
 
-3. Start the development server:
-   \`\`\`bash
-   npm run dev
-   \`\`\`
+`.env.local`
+```env
+API_BASE_URL=http://localhost:8000
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+```
 
-   The frontend will be available at http://localhost:3000.
+```bash
+# Start the development server
+npm run dev
+```
 
-## Project Structure
+🌐 Access frontend at: [http://localhost:3000](http://localhost:3000)
 
-\`\`\`
+---
+
+## 🗂 Project Structure
+
+```
 codelink/
 ├── app/                  # Next.js app directory
 │   ├── api/              # API routes for proxying requests to backend
@@ -98,89 +108,82 @@ codelink/
 ├── components/           # React components
 ├── context/              # React context providers
 ├── lib/                  # Utility functions and types
-├── public/               # Static assets
+├── public/               # Static assets (e.g., screenshots)
 ├── server/               # FastAPI backend
 │   ├── data/             # JSON data files
-│   ├── main.py           # FastAPI application
+│   ├── main.py           # FastAPI application entrypoint
 │   └── requirements.txt  # Python dependencies
 └── README.md             # Project documentation
-\`\`\`
+```
 
-## Usage
+---
 
-1. **Exploring Branches and Commits**:
-   - Use the left sidebar to navigate through branches and commits
-   - Click on a commit to view its changes
+## 🧑‍💻 Usage Guide
 
-2. **Viewing Code Changes**:
-   - The main panel displays file changes for the selected commit
-   - Use the navigation controls to move between changes
-   - Click the expand button to see more code context
+### 🔍 Exploring Branches and Commits
+- Use the sidebar to navigate through branches.
+- Click on a commit to view file-level changes.
 
-3. **Understanding Changes**:
-   - Feature explanations provide context about the purpose of changes
-   - Technical details explain implementation specifics
-   - Impact analysis shows how changes affect other parts of the codebase
+### 📝 Viewing Code Changes
+- Syntax-highlighted code diff view in the main panel.
+- Expand for detailed context.
 
-4. **Working with Tests**:
-   - View unit tests associated with changes
-   - Mark tests as passed or failed using the status indicators
-   - Submit edge cases for consideration
+### 🧠 Understanding Changes
+- Explanations outline purpose and rationale.
+- Technical deep dives available for selected changes.
+- Impact analysis shows ripple effects in the codebase.
 
-## Development Notes
+### ✅ Working with Tests
+- Browse unit tests linked to changes.
+- Mark tests as passed/failed.
+- Submit edge cases for additional validation.
+
+---
+
+## 🧩 Development Notes
 
 ### Adding New Projects
 
-To add a new project to CodeLink:
+1. Create a new folder under `server/data/` with your project name.
+2. Include these files:
+   - `branches.json`
+   - `file-changes.json`
+   - `explanations.json`
+   - `unit-tests.json`
+   - `impacts.json`
+   - `test-state.json`
+   - `deep-dive-analysis.json`
 
-1. Create a new directory in `server/data/` with the project name
-2. Add the required JSON files with the appropriate structure:
-   - `branches.json`: Repository branches and commits
-   - `file-changes.json`: Code changes for each commit
-   - `explanations.json`: Feature explanations for each change
-   - `unit-tests.json`: Unit tests for each change
-   - `impacts.json`: Code impacts for each change
-   - `test-state.json`: Test status for branches, commits, and changes
-   - `deep-dive-analysis.json`: Detailed technical analysis for impacts
+3. Modify `getCurrentProject()` in `server/utils.ts` to include the new project.
 
-3. Update the `getCurrentProject()` function in `server/utils.ts` to return the new project name
+### API Endpoints Overview
 
-### API Integration
+| Endpoint | Description |
+|----------|-------------|
+| `/api/branches` | Get all branches and commits |
+| `/api/commits/{commit_id}/changes` | File changes for a commit |
+| `/api/changes/{change_id}/explanation` | Explanation for a change |
+| `/api/changes/{change_id}/tests` | Unit tests for a change |
+| `/api/changes/{change_id}/impacts` | Code impacts |
+| `/api/impacts/{impact_id}/deep-dive` | Technical deep dive |
+| `/api/changes/{change_id}/edge-cases` | Submit edge cases |
+| `/api/test-state` | Get or update test state |
 
-The frontend communicates with the backend through a set of API endpoints:
+---
 
-- `/api/branches`: Get all branches and commits
-- `/api/commits/{commit_id}/changes`: Get file changes for a specific commit
-- `/api/changes/{change_id}/explanation`: Get explanation for a specific file change
-- `/api/changes/{change_id}/tests`: Get unit tests for a specific file change
-- `/api/changes/{change_id}/impacts`: Get code impacts for a specific file change
-- `/api/impacts/{impact_id}/deep-dive`: Get deep dive analysis for a specific impact
-- `/api/changes/{change_id}/edge-cases`: Submit edge cases for a specific file change
-- `/api/test-state`: Get or update the test state
-
-## Troubleshooting
+## 🛠 Troubleshooting
 
 ### Backend Connection Issues
-
-If you see "Failed to fetch" errors:
-
-1. Ensure the FastAPI backend is running at http://localhost:8000
-2. Check the backend health at http://localhost:8000/health
-3. Verify your `.env.local` file has the correct API_BASE_URL
-4. Check for CORS issues in the browser console
+- Confirm FastAPI is running on [http://localhost:8000](http://localhost:8000)
+- Visit `/health` endpoint for a quick check
+- Verify `.env.local` config matches API location
+- Check browser console for CORS errors
 
 ### Data Not Loading
+- Look at server logs for error traces
+- Ensure proper structure in `server/data` files
+- Use test page at [http://localhost:3000/test](http://localhost:3000/test) for debugging
 
-If data isn't loading properly:
+---
+Made with 💻 by the CodeLink Team
 
-1. Check the server logs for errors
-2. Verify the JSON data files exist in the correct location
-3. Use the test page at http://localhost:3000/test to test individual API endpoints
-
-## License
-
-[MIT License](LICENSE)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
