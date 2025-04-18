@@ -183,7 +183,3 @@ codelink/
 - Look at server logs for error traces
 - Ensure proper structure in `server/data` files
 - Use test page at [http://localhost:3000/test](http://localhost:3000/test) for debugging
-
----
-Made with 💻 by the CodeLink Team
-
